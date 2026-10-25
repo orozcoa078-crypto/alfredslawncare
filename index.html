@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Alfred's Lawn Care Service | Mowing, Edging, Trimming, Hauling</title>
+<title>Alfred's Lawn Service | Mowing, Edging, Trimming, Hauling</title>
 <meta name="description" content="Local, reliable, professional lawn care: mowing, edging, trimming, mulching, tree trimming, hauling and Christmas lights installation. Free estimates. Call or text (214) 545-4392.">
 <meta name="theme-color" content="#123a1c">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,7 +95,9 @@
   .field{display:grid;gap:6px;margin-bottom:12px}
   .field label,.legend{font-size:13px;font-weight:700;color:var(--ink-2);letter-spacing:.02em}
   .field input{font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fbfcf9;color:var(--ink);width:100%}
-  .field input:focus{outline:none;border-color:var(--blade);box-shadow:0 0 0 4px rgba(63,165,53,.18)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--blade);box-shadow:0 0 0 4px rgba(63,165,53,.18)}
+  .field select{font:inherit;font-size:16px;padding:12px 38px 12px 14px;border:1.5px solid var(--line);border-radius:10px;color:var(--ink);width:100%;-webkit-appearance:none;appearance:none;cursor:pointer;
+    background:#fbfcf9 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%232a7f24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") right 14px center/12px 8px no-repeat}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px;border:0}
   .chip{position:relative}
@@ -148,31 +150,28 @@
   @media(max-width:820px){.steps{grid-template-columns:1fr}}
 
   /* Christmas lights */
-  .lights{background:#0d1a2b;color:#eef3ff;position:relative;overflow:hidden;isolation:isolate}
-  .lights::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(700px 380px at 20% 0%,rgba(243,183,51,.14),transparent 70%),radial-gradient(600px 400px at 100% 100%,rgba(63,165,53,.16),transparent 70%)}
+  .lights{background:var(--turf);color:#fff;position:relative;overflow:hidden;isolation:isolate;
+    background-image:repeating-linear-gradient(100deg,transparent 0 90px,rgba(255,255,255,.035) 90px 180px)}
   .strand{position:absolute;top:0;left:0;right:0;height:70px;pointer-events:none}
   .strand svg{width:100%;height:70px}
   .bulb{animation:glow 2.4s ease-in-out infinite}
   .bulb:nth-child(3n){animation-delay:.8s}.bulb:nth-child(3n+1){animation-delay:1.6s}
   @keyframes glow{0%,100%{opacity:1}50%{opacity:.45}}
-  .lights .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;padding-top:40px}
+  .lights .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center;padding-top:40px}
   .lights .eyebrow{color:var(--sun)}
-  .lights h2{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:700;font-size:clamp(38px,5vw,64px);text-transform:none;letter-spacing:0;margin:12px 0 16px;color:#fff}
-  .lights p{color:#c9d4ea;font-size:18px;max-width:30em}
-  .lights ul{list-style:none;display:grid;gap:14px}
-  .lights li{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:16px 18px;border-radius:12px;font-weight:600}
-  .lights li svg{width:22px;height:22px;color:var(--sun);flex:none}
-  .lights .btn{margin-top:26px}
-  .lights ul{margin-top:26px}
-  .lights .photos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .lights .shot{background:#16263c}
-  .lights .shot img{aspect-ratio:3/4}
-  .lights .shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 14px 14px;background:linear-gradient(180deg,transparent,rgba(8,14,26,.9));display:grid;gap:2px}
-  .lights .shot figcaption b{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:17px;line-height:1.15;color:#fff}
-  .lights .shot figcaption span{font-size:13.5px;line-height:1.35;color:#d7deee}
-  .lights .photos .cap{grid-column:1/-1;color:#c9d4ea;margin-top:2px}
-  .lights .photos .cap b{color:#fff}
-  @media(max-width:820px){.lights .wrap{grid-template-columns:1fr}}
+  .lights h2{font-size:clamp(34px,4.6vw,56px);font-weight:900;font-stretch:108%;text-transform:uppercase;margin:12px 0 16px;color:#fff}
+  .lights .intro{color:#d6e8d0;font-size:18px;max-width:30em}
+  .lights .checks{margin-top:22px;color:#e8f4e3}
+  .lights .btn{margin-top:30px}
+  .lights .photos{display:grid;grid-template-columns:1fr 1fr;gap:22px 14px;align-items:start}
+  .lshot{margin:0;display:flex;flex-direction:column}
+  .lshot img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);background:var(--turf-2)}
+  .lshot figcaption{color:#d6e8d0;font-size:15px;line-height:1.45;margin-top:10px}
+  .lshot figcaption b{color:#fff}
+  .lights .photos .note{grid-column:1/-1;color:#d6e8d0;font-size:15px;border-top:1px solid rgba(255,255,255,.14);padding-top:16px}
+  .lights .photos .note b{color:var(--sun)}
+  @media(max-width:820px){.lights .wrap{grid-template-columns:1fr;gap:36px}}
+  @media(max-width:520px){.lights .photos{gap:18px 10px}.lshot figcaption{font-size:14px}}
 
   /* Pay */
   .pay{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
@@ -256,9 +255,9 @@
 
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Alfred's Lawn Care Service, home">
+    <a class="brand" href="#top" aria-label="Alfred's Lawn Service, home">
       <img src="logo.jpg" alt="" width="58" height="46">
-      <span><b>Alfred's</b><small>Lawn Care Service</small></span>
+      <span><b>Alfred's</b><small>Lawn Service</small></span>
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#services">Services</a>
@@ -298,9 +297,8 @@
       <div class="field"><label for="q-addr">Service address</label><input id="q-addr" name="address" autocomplete="street-address" placeholder="Street, city" required></div>
       <div class="row2">
         <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" placeholder="(000) 000-0000" required></div>
-        <div class="field"><label for="q-when">How often?</label><input id="q-when" name="when" list="q-when-list" placeholder="Weekly, one-time…"></div>
+        <div class="field"><label for="q-when">How often?</label><select id="q-when" name="when"><option value="">Choose one…</option><option value="Weekly">Weekly</option><option value="Bi-weekly">Bi-weekly</option><option value="One-time">One-time</option></select></div>
       </div>
-      <datalist id="q-when-list"><option value="Weekly"><option value="Every two weeks"><option value="One-time"></datalist>
       <fieldset class="chips" aria-label="Services needed">
         <span class="legend" style="width:100%">What do you need?</span>
         <label class="chip"><input type="checkbox" id="s-mow" value="Mowing" checked><span>Mowing</span></label>
@@ -449,7 +447,7 @@
 <section class="lights" id="lights" aria-labelledby="lights-h">
   <div class="strand" aria-hidden="true">
     <svg viewBox="0 0 1200 70" preserveAspectRatio="none">
-      <path d="M0 10 Q100 46 200 10 T400 10 T600 10 T800 10 T1000 10 T1200 10" fill="none" stroke="#2b3a52" stroke-width="2"/>
+      <path d="M0 10 Q100 46 200 10 T400 10 T600 10 T800 10 T1000 10 T1200 10" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="2"/>
       <g>
         <circle class="bulb" cx="50" cy="33" r="7" fill="#f3b733"/><circle class="bulb" cx="150" cy="33" r="7" fill="#e5484d"/>
         <circle class="bulb" cx="250" cy="33" r="7" fill="#3fa535"/><circle class="bulb" cx="350" cy="33" r="7" fill="#4c8dff"/>
@@ -464,8 +462,8 @@
     <div>
       <p class="eyebrow">Seasonal</p>
       <h2 id="lights-h">Christmas Lights Installation</h2>
-      <p>Making your yard beautiful all year long. We hang the lights, then come back to take them down after the holidays, so you never have to climb the ladder.</p>
-      <ul>
+      <p class="intro">Making your yard beautiful all year long. We hang the lights, then come back to take them down after the holidays, so you never have to climb the ladder.</p>
+      <ul class="checks">
         <li><svg><use href="#i-check"/></svg>Professional installation</li>
         <li><svg><use href="#i-check"/></svg>Safe &amp; reliable</li>
         <li><svg><use href="#i-check"/></svg>Beautify your home</li>
@@ -474,11 +472,11 @@
       <a class="btn btn-sun" href="sms:+12145454392"><svg><use href="#i-chat"/></svg>Free Estimate: Text Us</a>
     </div>
     <div class="photos">
-      <figure class="shot"><img src="images/lights-day.jpg" srcset="images/lights-day-900.jpg 675w, images/lights-day.jpg 1500w" sizes="(max-width: 900px) 50vw, 330px" alt="Daytime: a two-story brick house with light strands clipped along the roofline and a ladder against the garage" width="1500" height="2000" loading="lazy" decoding="async" style="object-position:50% 70%"><figcaption><b>Hung with care</b><span>Clipped neatly along every roofline.</span></figcaption></figure>
-      <figure class="shot"><img src="images/lights-night.jpg" srcset="images/lights-night-900.jpg 675w, images/lights-night.jpg 1500w" sizes="(max-width: 900px) 50vw, 330px" alt="Night: the same house lit up with blue and white lights along every roofline and a tree wrapped in lights" width="1500" height="2000" loading="lazy" decoding="async" style="object-position:45% 60%"><figcaption><b>The brightest house on the block</b><span>Rooflines and trees glowing in your colors.</span></figcaption></figure>
-      <figure class="shot"><img src="images/lights-red-white.jpg" srcset="images/lights-red-white-900.jpg 675w, images/lights-red-white.jpg 1500w" sizes="(max-width: 900px) 50vw, 330px" alt="Two-story stone house outlined in red and white lights along the roof and around the tall front entry" width="1500" height="2000" loading="lazy" decoding="async" style="object-position:50% 62%"><figcaption><b>Classic red &amp; white</b><span>Bold holiday color your neighbors will notice.</span></figcaption></figure>
-      <figure class="shot"><img src="images/lights-warm-white.jpg" srcset="images/lights-warm-white-900.jpg 675w, images/lights-warm-white.jpg 1500w" sizes="(max-width: 900px) 50vw, 330px" alt="Brick house with warm white lights along the roofline and framing the front windows" width="1500" height="2000" loading="lazy" decoding="async" style="object-position:50% 60%"><figcaption><b>Timeless warm white</b><span>Elegant glow framing every window.</span></figcaption></figure>
-      <p class="cap"><b>Every home here was lit by our crew.</b> We plan the look, hang every strand and take it all down when the season's over, so you just enjoy the glow.</p>
+      <figure class="lshot"><img src="images/lights-day.jpg" srcset="images/lights-day-900.jpg 675w, images/lights-day.jpg 1500w" sizes="(max-width: 900px) 50vw, 330px" alt="Daytime: a two-story brick house with light strands clipped along the roofline and a ladder against the garage" width="1500" height="2000" loading="lazy" decoding="async" style="object-position:50% 70%"><figcaption><b>Hung with care.</b> Clipped neatly along every roofline.</figcaption></figure>
+      <figure class="lshot"><img src="images/lights-night.jpg" srcset="images/lights-night-900.jpg 675w, images/lights-night.jpg 1500w" sizes="(max-width: 900px) 50vw, 330px" alt="Night: the same house lit up with blue and white lights along every roofline and a tree wrapped in lights" width="1500" height="2000" loading="lazy" decoding="async" style="object-position:45% 60%"><figcaption><b>Brightest on the block.</b> Rooflines and trees in your colors.</figcaption></figure>
+      <figure class="lshot"><img src="images/lights-red-white.jpg" srcset="images/lights-red-white-900.jpg 675w, images/lights-red-white.jpg 1500w" sizes="(max-width: 900px) 50vw, 330px" alt="Two-story stone house outlined in red and white lights along the roof and around the tall front entry" width="1500" height="2000" loading="lazy" decoding="async" style="object-position:50% 62%"><figcaption><b>Classic red &amp; white.</b> Bold color your neighbors will notice.</figcaption></figure>
+      <figure class="lshot"><img src="images/lights-warm-white.jpg" srcset="images/lights-warm-white-900.jpg 675w, images/lights-warm-white.jpg 1500w" sizes="(max-width: 900px) 50vw, 330px" alt="Brick house with warm white lights along the roofline and framing the front windows" width="1500" height="2000" loading="lazy" decoding="async" style="object-position:50% 60%"><figcaption><b>Timeless warm white.</b> A soft glow framing every window.</figcaption></figure>
+      <p class="note"><b>Every home here was lit by our crew.</b> We plan the look, hang every strand and take it all down when the season's over, so you just enjoy the glow.</p>
     </div>
   </div>
 </section>
@@ -491,8 +489,8 @@
       <p>Pick whichever is easiest for you.</p>
     </div>
     <div class="pay">
-      <div><span class="tag">Zelle</span><p>Send to <strong>(214) 545-4392</strong>. The name should show as Alfred's Lawn Care Service. Not sure? Call or text us first.</p></div>
-      <div><span class="tag">Check</span><p>Made payable to <strong>Alfred's Lawn Care Service</strong>.</p></div>
+      <div><span class="tag">Zelle</span><p>Send to <strong>(214) 545-4392</strong>. The name should show as Alfred's Lawn Service. Not sure? Call or text us first.</p></div>
+      <div><span class="tag">Check</span><p>Made payable to <strong>Alfred's Lawn Service</strong>.</p></div>
       <div><span class="tag">Cash</span><p>Paid in person at the time of service.</p></div>
     </div>
   </div>
@@ -523,7 +521,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <h3>Alfred's Lawn Care Service</h3>
+      <h3>Alfred's Lawn Service</h3>
       <a class="ph" href="tel:+12145454392">(214) 545-4392</a>
       <p>Call or text for a free estimate.</p>
     </div>
@@ -535,7 +533,7 @@
       <h3>Company</h3>
       <ul><li><a href="#how">Insta-Quote</a></li><li><a href="#pay">How to Pay</a></li><li><a href="#work">Our Work</a></li><li><a href="#hiring">We're Hiring</a></li></ul>
     </div>
-    <p class="fine">&copy; <span id="yr">2026</span> Alfred's Lawn Care Service. All rights reserved.</p>
+    <p class="fine">&copy; <span id="yr">2026</span> Alfred's Lawn Service. All rights reserved.</p>
   </div>
 </footer>
 
